@@ -19,4 +19,4 @@ The lab instructions and video tutorials are available [on Udemy](https://www.ud
 
 ### License
 
-Code samples in the repository are made available under an [MIT License](./LICENSE) (so you can reuse with very few limitations)
+Except where otherwise noted, code samples in the repository are made available under an [MIT License](./LICENSE) (so you can reuse with very few limitations).

@@ -1,0 +1,17 @@
+{
+  "name": "tensorflow-lab-2.2",
+  "version": "1.0.0",
+  "description": "Lab 2.2 from the Machine Learning in JavaScript with TensorFlow.js course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Justin Emery",
+    "url": "https://www.justinemery.co.uk/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^1.2.5"
+  }
+}
