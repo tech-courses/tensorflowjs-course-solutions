@@ -1,7 +1,7 @@
 # Solutions for Section 1
 ## Introducing TensorFlow.js and Machine Learning
 
-These are the solutions for Section 1 of the **Machine Learning in JavaScript with TensorFlow.js** course. See [solutions index](../README.md) for solutions to other sections.
+These are the solutions for Section 1 of the **Machine Learning in JavaScript with TensorFlow.js** course. See [solutions index](../../README.md) for solutions to other sections.
 
 
 ### Lab: TensorFlow Playground
@@ -18,4 +18,4 @@ Each link will open a model configuration in the TensorFlow Playground. You can 
 
 ---
 
-See [solutions index](../README.md) for solutions to other sections.
+See [solutions index](../../README.md) for solutions to other sections.

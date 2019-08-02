@@ -7,7 +7,7 @@ The lab instructions and video tutorials are available [on Udemy](https://www.ud
 ### Contents
 
 - [Section 1: Introducing TensorFlow.js and Machine Learning](./Sections/1-overview/README.md)
-- [Section 2: Installating and Running TensorFlow.js](./Sections/2-install/README.md)
+- [Section 2: Installing and Running TensorFlow.js](./Sections/2-install/README.md)
 - [Section 3: TensorFlow.js Core Concepts](./Sections/3-concepts/README.md)
 - [Section 4: Data Preparation with TensorFlow.js](./Sections/4-data-prep/README.md)
 - [Section 5: Defining a Model in TensorFlow.js](./Sections/5-model/README.md)
