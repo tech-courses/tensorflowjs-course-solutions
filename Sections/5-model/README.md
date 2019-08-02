@@ -6,7 +6,7 @@ These are the solutions for Section 5 of the **Machine Learning in JavaScript wi
 
 ### Lab: Creating a Model
 
-This is the second lab for the Linear Regression project which is developed through sections 4 -7.
+This is the second lab for the Linear Regression project which is developed through sections 4 - 7.
 
 The starting point to this lab is the [solution for the section 4 lab](../4-data-prep/README.md).
 

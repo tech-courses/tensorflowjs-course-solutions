@@ -85,6 +85,11 @@
 
     const [trainingFeatureTensor, testingFeatureTensor] = tf.split(normalisedFeature.tensor, 2);
     const [trainingLabelTensor, testingLabelTensor] = tf.split(normalisedLabel.tensor, 2);
+
+    const model = createModel();
+    tfvis.show.modelSummary({ name: "Model summary" }, model);
+    const layer = model.getLayer(undefined, 0);
+    tfvis.show.layer({ name: "Layer 1" }, layer);
   }
 
   run();
