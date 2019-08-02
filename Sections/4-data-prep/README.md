@@ -1,5 +1,5 @@
 # Solutions for Section 4
-## Installing and Running TensorFlow.js
+## Data Preparation with TensorFlow.js
 
 These are the solutions for Section 4 of the **Machine Learning in JavaScript with TensorFlow.js** course. See [solutions index](../../README.md) for solutions to other sections.
 

@@ -1,5 +1,5 @@
 # Solutions for Section 3
-## ISection 3: TensorFlow.js Core Concepts
+## TensorFlow.js Core Concepts
 
 These are the solutions for Section 3 of the **Machine Learning in JavaScript with TensorFlow.js** course. See [solutions index](../../README.md) for solutions to other sections.
 
