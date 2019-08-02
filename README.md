@@ -12,7 +12,7 @@ The lab instructions and video tutorials are available [on Udemy](https://www.ud
 - [Section 4: Data Preparation with TensorFlow.js](./Sections/4-data-prep/README.md)
 - [Section 5: Defining a Model in TensorFlow.js](./Sections/5-model/README.md)
 - [Section 6: Training and Testing in TensorFlow.js](./Sections/6-training-testing/README.md)
-- [Section 7: TensorFlow.js  Prediction](./Sections/7-predictions/README.md)
+- [Section 7: TensorFlow.js Prediction](./Sections/7-predictions/README.md)
 - [Section 8: Binary Classification](./Sections/8-classification/README.md)
 - [Section 9: Multi-class Classification](./Sections/9-multi-class/README.md)
 - Section 10: Conclusion - N/A - No labs in this section!
