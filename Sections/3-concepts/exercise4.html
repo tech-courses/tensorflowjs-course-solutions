@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Section 3 Lab: Tensor Math & Memory Management</title>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+	<script>
+		console.info(` === Exercise 4: === `);
+
+		for (let i = 0; i < 100; i++) {
+			const createdTensor = tf.tensor1d([1,2,3]);
+			createdTensor.dispose();
+		}
+		for (let i = 0; i < 100; i++) {
+			tf.tidy(() => {
+				tf.tensor1d([4,5,6])
+				// Be careful not to return the tensor, unless you want it to stay in memory!
+			});
+		}
+		console.log(tf.memory());
+
+	</script>
+</head>
+<body>
+<h1>Section 3 Lab: Exercise 4</h1>
+<h2>Tensor Math & Memory Management</h2>
+<p>Open the web console to see the output.</p>
+</body>
+</html>

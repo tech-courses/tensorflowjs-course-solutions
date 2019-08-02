@@ -10,7 +10,7 @@ See [tfjs-browser.html](./tfjs-browser.html) for solution.
 
 ### Lab: Install and run TensorFlow.js on Node.js
 
-See [tensorflow-lab-2.2/index.js](./tensorflow-lab-2.2/index.js) for solution.
+See [tensorflow-lab-2.2/](./tensorflow-lab-2.2/) for solution.
 
 You can run this on the command line with:
 

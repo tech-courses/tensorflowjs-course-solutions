@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Section 3 Lab: Tensor Math & Memory Management</title>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+	<script>
+		console.info(` === Exercise 3: === `);
+
+		tf.tidy(() => {
+
+			const t3 = tf.tensor1d([25, 76, 4, 23, -5, 22]);
+			const max = t3.max(); // 76
+			const min = t3.min(); // -5
+
+			function minMaxNormalisation (tensor) {
+				const min = tensor.min();
+				const max = tensor.max();
+				const normalisedTensor = tensor.sub(min).div(max.sub(min));
+				return normalisedTensor;
+			}
+
+			const normalisedT3 = minMaxNormalisation(t3);
+			normalisedT3.print();
+
+		});
+
+		console.info(`Check memory is empty:`);
+		console.log(tf.memory());
+
+
+	</script>
+</head>
+<body>
+<h1>Section 3 Lab: Exercise 3</h1>
+<h2>Tensor Math & Memory Management</h2>
+<p>Open the web console to see the output.</p>
+</body>
+</html>

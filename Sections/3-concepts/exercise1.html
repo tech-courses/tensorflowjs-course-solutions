@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Section 3 Lab: Tensor Math & Memory Management</title>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+	<script>
+		console.info(` === Exercise 1: === `);
+
+
+		tf.tidy(() => {
+			console.info(`Original snippet:`);
+			const xs = tf.tensor1d([1, 2, 3]);
+			const ys = xs.mul(tf.scalar(5));
+			ys.print();
+		});
+
+		tf.tidy(() => {
+			console.info(`Created with .tensor:`);
+			const xs = tf.tensor([1, 2, 3], [3]);
+			const ys = xs.mul(tf.scalar(5));
+			ys.print();
+		});
+
+		tf.tidy(() => {
+			console.info(`As a 2D tensor:`);
+			const xs = tf.tensor([1, 2, 3], [3, 1]);
+			// or: tf.tensor2d([[1],[2],[3]]);
+			const ys = xs.mul(tf.scalar(5));
+			ys.print();
+		});
+
+		console.info(`Shape mismatch (produces an Error):`);
+		tf.tidy(() => {
+			try {
+				const xs = tf.tensor([1, 2, 3], [3, 2]);
+				// or: tf.tensor2d([[1],[2],[3]]);
+				const ys = xs.mul(tf.scalar(5));
+				ys.print();
+			}
+			catch (err) {
+				console.warn(err);
+			}
+		});
+
+		tf.tidy(() => {
+			console.info(`Using .add(...):`);
+			const xs = tf.tensor1d([1, 2, 3]);
+			const ys = xs.add(tf.scalar(5));
+			ys.print();
+		});
+
+		tf.tidy(() => {
+			console.info(`Using .sub(...):`);
+			const xs = tf.tensor1d([1, 2, 3]);
+			const ys = xs.sub(tf.scalar(5));
+			ys.print();
+		});
+
+		tf.tidy(() => {
+			console.info(`Using .add(...) with a 1D tensor:`);
+			const xs = tf.tensor1d([1, 2, 3]);
+			const ys = xs.add(tf.tensor1d([1, 0, 1]));
+			ys.print();
+		});
+
+		tf.tidy(() => {
+			console.info(`Using .add(...) with a 2D tensor (3 x 1):`);
+			const xs = tf.tensor1d([1, 2, 3]);
+			const ys = xs.add(tf.tensor2d([[1], [0], [1]]));
+			ys.print();
+		});
+
+		tf.tidy(() => {
+			console.info(`Using .add(...) with a 2D tensor (1 x 3):`);
+			const xs = tf.tensor1d([1, 2, 3]);
+			const ys = xs.add(tf.tensor2d([[1, 0, 1]]));
+			ys.print();
+		});
+
+		console.info(`Check memory is empty:`);
+		console.log(tf.memory());
+	</script>
+</head>
+<body>
+<h1>Section 3 Lab: Exercise 1</h1>
+<h2>Tensor Math & Memory Management</h2>
+<p>Open the web console to see the output.</p>
+</body>
+</html>
