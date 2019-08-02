@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TensorFlow.js linear regression</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+  async function plot(pointsArray, featureName) {
+    tfvis.render.scatterplot(
+      { name: `${featureName} vs House Price` },
+      { values: [pointsArray], series: ["original"] },
+      {
+        xLabel: featureName,
+        yLabel: "Price",
+      }
+    )
+  }
+
+  function normalise(tensor) {
+    const min = tensor.min();
+    const max = tensor.max();
+    const normalisedTensor = tensor.sub(min).div(max.sub(min));
+    return {
+      tensor: normalisedTensor,
+      min,
+      max
+    };
+  }
+
+  function denormalise(tensor, min, max) {
+    const denormalisedTensor = tensor.mul(max.sub(min)).add(min);
+    return denormalisedTensor;
+  }
+
+  function createModel() {
+    const model = tf.sequential();
+
+    model.add(tf.layers.dense({
+      units: 1,
+      useBias: true,
+      activation: 'linear',
+      inputDim: 1,
+    }));
+
+    const optimizer = tf.train.sgd(0.1);
+    model.compile({
+      loss: 'meanSquaredError',
+      optimizer,
+    });
+
+    return model;
+  }
+
+  async function run () {
+    // Import from CSV
+    const houseSalesDataset = tf.data.csv("http://127.0.0.1:8080/kc_house_data.csv");
+
+    // Extract x and y values to plot
+    const pointsDataset = houseSalesDataset.map(record => ({
+      x: record.sqft_living,
+      y: record.price,
+    }));
+    const points = await pointsDataset.toArray();
+    if(points.length % 2 !== 0) { // If odd number of elements
+      points.pop(); // remove one element
+    }
+    tf.util.shuffle(points);
+    plot(points, "Square feet");
+
+    // Extract Features (inputs)
+    const featureValues = points.map(p => p.x);
+    const featureTensor = tf.tensor2d(featureValues, [featureValues.length, 1]);
+
+    // Extract Labels (outputs)
+    const labelValues = points.map(p => p.y);
+    const labelTensor = tf.tensor2d(labelValues, [labelValues.length, 1]);
+
+    // Normalise features and labels
+    const normalisedFeature = normalise(featureTensor);
+    const normalisedLabel = normalise(labelTensor);
+
+    const [trainingFeatureTensor, testingFeatureTensor] = tf.split(normalisedFeature.tensor, 2);
+    const [trainingLabelTensor, testingLabelTensor] = tf.split(normalisedLabel.tensor, 2);
+
+    const model = createModel();
+    tfvis.show.modelSummary({ name: "Model summary" }, model);
+    const layer = model.getLayer(undefined, 0);
+    tfvis.show.layer({ name: "Layer 1" }, layer);
+  }
+
+  run();
+</script>
+
+</body>
+</html>
