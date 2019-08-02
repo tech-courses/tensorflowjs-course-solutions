@@ -1,6 +1,6 @@
 # Machine Learning in JavaScript with TensorFlow.js - Lab solutions
 
-This repository holds the solutions for the [Machine Learning in JavaScript with TensorFlow.js](https://www.udemy.com/machine-learning-in-javascript-with-tensorflow-js/?couponCode=TECH.COURSES.10) course. 
+This repository holds the solutions for the [Machine Learning in JavaScript with TensorFlow.js](https://www.udemy.com/machine-learning-in-javascript-with-tensorflow-js/?couponCode=TECH.COURSES.10) course, a [tech.courses](https://tech.courses) course. 
 
 The lab instructions and video tutorials are available [on Udemy](https://www.udemy.com/machine-learning-in-javascript-with-tensorflow-js/?couponCode=TECH.COURSES.10) once you have purchased the course.
 
@@ -16,3 +16,7 @@ The lab instructions and video tutorials are available [on Udemy](https://www.ud
 - [Section 8: Binary Classification](./Sections/8-classification/README.md)
 - [Section 9: Multi-class Classification](./Sections/9-multi-class/README.md)
 - Section 10: Conclusion - N/A - No labs in this section!
+
+### License
+
+Code samples in the repository are made available under an [MIT License](./LICENSE) (so you can reuse with very few limitations)
