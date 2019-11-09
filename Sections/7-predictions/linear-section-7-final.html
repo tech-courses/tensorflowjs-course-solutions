@@ -148,7 +148,6 @@
       await plotPredictionLine();
 
       document.getElementById("model-status").innerHTML = `Trained (saved ${modelInfo.dateSaved})`;
-      document.getElementById("test-button").removeAttribute("disabled");
       document.getElementById("predict-button").removeAttribute("disabled");
     }
     else {
