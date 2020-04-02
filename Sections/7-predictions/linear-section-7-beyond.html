@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>TensorFlow.js linear regression</title>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
@@ -89,7 +89,7 @@
     model.compile({
       loss: 'meanSquaredError',
       optimizer,
-    })
+    });
 
     return model;
   }
@@ -99,7 +99,7 @@
     const { onBatchEnd, onEpochEnd } = tfvis.show.fitCallbacks(
       { name: "Training Performance" },
       ['loss']
-    )
+    );
 
     return model.fit(trainingFeatureTensor, trainingLabelTensor, {
       batchSize: 32,
@@ -219,6 +219,9 @@
   let normalisedFeature, normalisedLabel;
   let trainingFeatureTensor, testingFeatureTensor, trainingLabelTensor, testingLabelTensor;
   async function run () {
+    // Ensure backend has initialized
+    await tf.ready();
+
     // Import from CSV
     const houseSalesDataset = tf.data.csv("http://127.0.0.1:8080/kc_house_data.csv");
 
